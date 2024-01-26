@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getEmployeeById } from "../../services/employeeService";
+import { getEmployeeByUserId } from "../../services/employeeService";
 import "./Employees.css";
 
 export const EmployeeDetails = () => {
@@ -8,7 +8,7 @@ export const EmployeeDetails = () => {
   const { employeeId } = useParams();
 
   useEffect(() => {
-    getEmployeeById(employeeId).then((data) => {
+    getEmployeeByUserId(employeeId).then((data) => {
       const customerObj = data[0];
       setEmployee(customerObj);
     });

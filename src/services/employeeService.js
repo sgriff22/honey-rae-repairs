@@ -4,9 +4,9 @@ export const getAllEmployees = () => {
   );
 };
 
-export const getEmployeeById = (id) => {
+export const getEmployeeByUserId = (id) => {
   return fetch(
-    `http://localhost:8088/employees?userId=${id}&_expand=user&_embed=employeeTickets`
+    `http://localhost:8088/employees?_expand=user&_embed=employeeTickets&_userId=${id}`
   ).then((res) => res.json());
 };
 

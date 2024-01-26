@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Form.css";
 import {
-  getEmployeeById,
+  getEmployeeByUserId,
   updateEmployee,
 } from "../../services/employeeService";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ export const EmployeeForm = ({ currentUser }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getEmployeeById(currentUser.id).then((data) => {
+    getEmployeeByUserId(currentUser.id).then((data) => {
       const employeeObj = data[0];
       setEmployee(employeeObj);
     });
