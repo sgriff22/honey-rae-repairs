@@ -26,6 +26,7 @@ export const TicketList = ({ currentUser }) => {
 
   useEffect(() => {
     getAndSetTickets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser]); //Only runs on initial render of component
 
   useEffect(() => {
